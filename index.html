@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header border">
+            <div class="logo">
+                <img src="images/logo1.png" alt="headerlogoIMG">
+            </div>
+            <ul class="menu" style="display: flex; align-items: center;">
+                <li><a href="#">탑</a></li>
+                <li><a href="#">아우터</a></li>
+                <li><a href="#">악세사리</a></li>
+                <li><a href="#">신발</a></li>
+            </ul>
+        </div>
+        <div class="slide border">
+            <img src="images/s1.jpg" alt="slideIMG">
+        </div>
+        <div class="contents border">
+            <div class="box">
+                <button class="Nbtn">NOTICE</button>
+                <button class="Gbtn">GALLERY</button>
+                <div class="notice contentsElement">
+                    <ul>
+                        <li class="open-pop">2024학년도 저스트쇼핑몰 초특가 이벤트</li> <br>
+                        <li>저스트쇼핑몰 수원점 Grand Open!</li> <br>
+                        <li>선착순 20명께만 드리는 1+1 사은품 증정</li> <br>
+                        <li>11월 11일 빼빼로데이 고백하세요~</li> <br>
+                        <li>2025학년도 대입 수능 합격 기원 초코파이 증정</li>
+                    </ul>
+
+                    
+                </div>
+                <ul class="gallery">
+                    <li><img src="images/g2.jpg" alt=""></li>
+                    <li><img src="images/g3.jpg" alt=""></li>
+                    <li><img src="images/g2.jpg" alt=""></li>
+                </ul>
+            </div>
+
+
+            <div class="banner contentsElement">
+                <img src="images/b1.jpg" alt="bannerIMG">
+            </div>
+            <div class="baro contentsElement">
+                <img src="images/g2.jpg" alt="baroIMG" style="width: 400px; height: 200px;">
+            </div>
+        </div>
+        <div class="footer border">
+            <div class="logo border">
+                <img src="images/logo2.png" alt="footerlogoIMG">
+            </div>
+            <div class="copy border">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+        </div>
+        <div class="pop border" style="display: none;">
+            <h1>저스트 쇼핑몰 초특가 할인</h1>
+            <h3>11월 11일까지 선착순 20명!</h3>
+            <h3>놓치지 마세요</h3>
+
+            <button class="close-pop"
+                style="border-radius:10px; width: 100px; height: 30px; font-weight: bold;">close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        //첫번째 공지사항을 클릭하면 pop영역이 보인다.
+        $(".open-pop").click(function () {
+            $(".pop").fadeIn();
+        })
+
+        $(".close-pop").click(function () {
+            $(".pop").fadeOut();
+        })
+
+        $(".gallery").hide();
+        //닫기 버튼을 클릭하면 pop영역이 사라진다.
+
+        //Gbtn을 클릭하면
+        //1. .notice영역이 안보임.
+        //2. .gallery영역이 보임.
+
+        $(".Gbtn").click(function() {
+            $(".notice").hide();
+            $(".gallery").show();
+            $(".gallery").css("display", "flex");
+        })
+
+        //Nbtn을 클릭하면
+        //1. .gallery영역이 안보임.
+        //2. .notice영역이 안보임.
+
+        $(".Nbtn").click(function() {
+            $(".notice").show();
+            $(".gallery").hide();
+        })
+    </script>
+</body>
+
+</html>
